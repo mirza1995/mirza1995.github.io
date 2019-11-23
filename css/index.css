@@ -63,6 +63,37 @@ body, html {
   color:#FFD614;
 }
 
+.index__upwork {
+  background-color: black;
+  opacity: 0.95;
+  padding: 15px 0;
+}
+
+.index__upwork h3 {
+  margin-left: 20px;
+  margin-top: 20px;
+  color:#FFD614;
+}
+
+.index__upwork__reviews {
+  margin: 20px 30px;
+  display: flex;
+  flex-wrap: space-between;
+}
+
+.index__upwork .index__upwork__reviews .card{
+  flex: 1;
+  margin: 0px 30px;
+  background-color: black;
+  color: white;
+  border:2px solid #FFD614;
+  border-radius: 4px;
+}
+
+.index__upwork__reviews .card .card-title {
+  color:#FFD614;
+}
+
 @media only screen and (max-width: 430px) {
   .index__information {
     margin-top: 150px;
