@@ -1,0 +1,103 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body,html {
+	width: 100%;
+	height: 100%;
+}
+
+#landscape {
+	width: 100%;
+	height: 100%;
+	background:url("../img/background.jpg") no-repeat right bottom;
+	background-size:  cover;
+	color: white;
+}
+
+#logo {
+	width: 100%;
+	text-align: center;
+	padding-top: 20px;
+}
+#logoImage {
+	margin: 0 auto;
+	width: 25%;
+	height: 25%;
+}
+
+#socialNetwork {
+	font-size: 130%;
+	width:100%;
+	text-align: center;
+}
+
+#comingSoon {
+	width:100%;
+	text-align: center;
+	font-size:186%;
+	color: #17a2b8;
+}
+
+#counter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+#counter div {
+	border: 1px solid #fff;
+	padding: 20px;
+	border-radius: 10px;
+	margin: 10px;
+	opacity: 0.8;
+	background: #000;
+	font-size: 20px;
+}
+#counter div:first-child{
+	background:#17a2b8;
+}
+#counter span {
+	font-size: 35px;
+	display: block;
+}
+
+#launched {
+	color: #17a2b8;
+	display: none;
+}
+
+
+
+/*Smaller Screens*/
+@media only screen and (max-width: 1200px) {
+    #logoImage {
+        width: 45%;
+		height: 45%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #logoImage {
+        width: 55%;
+		height: 55%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #logoImage {
+        width: 75%;
+		height: 75%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #counter div {
+    	display:none;
+    }
+    #counter div:first-child{
+    	display: block;
+    	width: 60%;
+    }
+}

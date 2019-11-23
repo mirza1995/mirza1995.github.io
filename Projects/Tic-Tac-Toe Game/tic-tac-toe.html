@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic-Tac-Toe Game</title>
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script src="jquery-ui/jquery-ui.js"></script>
+	<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+
+	<style type="text/css">
+		body,html {
+			margin:0;
+			padding:0;
+			height: 100%;
+			width: 100%;
+		}
+		body {
+			background-color: #1b1d21;
+			color: white;
+			font-family: sans-serif;
+		}
+		#mainContainer {
+			width: 35%;
+			border-radius: 10px;
+			background-color: #595e68;
+			margin:5% auto;
+			text-align: center;
+			border: 1px solid #595e68;
+		}
+		h1 {
+			font-size: 200%;
+			margin-top: 3%;
+		}
+
+		#gameContainer {
+			width: 65%;
+			margin: 0 auto;
+			background-color: #595e68;
+		}
+
+		#resetButton {
+			width: 70%;
+			height: 7%;
+			background-color: #1b1d21;
+			color: white;
+			margin: 2% auto;
+			border-radius: 2px;
+			padding-top: 2%;
+			line-height: 160%;
+		}
+		.hovered {
+			background-color: black;
+			border:2px solid #6294f7;
+		}
+
+		.row {
+			width: 100%;
+			height: 30%;
+			
+		}
+		.one-third {
+			width: 30%;
+			height: 90%;
+			background-color: #1b1d21;
+			float: left;
+			margin-left: 2%;
+			margin-top: 2%;
+		}
+		.one-third img {
+			margin-top: 25%;
+			width: 50%;
+		}
+
+
+	</style>
+</head>
+<body>
+
+
+	<div id="mainContainer">
+		<h1>Tic Tac Toe</h1>
+
+		<div id="gameContainer">		
+			<div class="row">
+				<div class="one-third" id="1"><img src="img/plus.png"></div>
+				<div class="one-third" id="2"><img src="img/plus.png"></div>
+				<div class="one-third" id="3"><img src="img/plus.png"></div>
+			</div>
+			<div class="row">
+				<div class="one-third" id="4"><img src="img/plus.png"></div>
+				<div class="one-third" id="5"><img src="img/plus.png"></div>
+				<div class="one-third" id="6"><img src="img/plus.png"></div>
+			</div>
+			<div class="row">
+				<div class="one-third" id="7"><img src="img/plus.png"></div>
+				<div class="one-third" id="8"><img src="img/plus.png"></div>
+				<div class="one-third" id="9"><img src="img/plus.png"></div>
+			</div>
+
+
+
+		</div>
+
+		<div id="resetButton">
+		Reset Game
+		</div>
+
+		
+	</div>
+
+
+	<script type="text/javascript">
+		function dimensionsChange() {
+			$("#mainContainer").height($("#mainContainer").width()+40);
+			$("#gameContainer").height($("#gameContainer").width()+40);
+			$("#resetButton").width($("#gameContainer").width());
+		}
+
+
+		var one=0;
+		var two=0;
+		var three=0;
+		var four=0;
+		var five=0;
+		var six=0;
+		var seven=0;
+		var eight=0;
+		var nine=0;
+		var oks=true;
+		var winner=false;
+
+		dimensionsChange();
+		$(window).resize(function(){
+			dimensionsChange();
+		})
+
+		$("#resetButton").hover(function(){
+			$(this).addClass("hovered");
+		},function(){
+			$(this).removeClass("hovered");
+		})
+
+
+		$(".one-third").click(function(){
+			if(winner==false){
+			if(oks){
+				if($(this).hasClass("activated")) {
+					alert("This block is already activated!!!")
+				}
+				else {
+					$(this).find("img").attr("src","img/circle.png");
+					oks=false;
+					$(this).addClass("activatedOks");
+					$(this).addClass("activated");
+
+				}	
+			}
+			else {
+				if($(this).hasClass("activated")) {
+					alert("This block is already activated!!!")
+				}
+				else {
+					$(this).find("img").attr("src","img/x.png");
+					oks=true;
+					$(this).addClass("activatedX");
+					$(this).addClass("activated");
+				}
+			}
+
+			if($("#1").hasClass("activatedX") && $("#2").hasClass("activatedX") && $("#3").hasClass("activatedX")) {
+				alert("X player won!")
+				winner=true;
+			}
+			else if($("#1").hasClass("activatedX") && $("#4").hasClass("activatedX") && $("#7").hasClass("activatedX")) {
+				alert("X player won!")
+				winner=true;
+			}
+			else if($("#7").hasClass("activatedX") && $("#8").hasClass("activatedX") && $("#9").hasClass("activatedX")) {
+				alert("X player won!")
+				winner=true;
+			}
+			else if($("#3").hasClass("activatedX") && $("#6").hasClass("activatedX") && $("#9").hasClass("activatedX")) {
+				alert("X player won!")
+				winner=true;
+			}
+			else if($("#2").hasClass("activatedX") && $("#5").hasClass("activatedX") && $("#8").hasClass("activatedX")) {
+				alert("X player won!")
+				winner=true;
+			}
+			else if($("#4").hasClass("activatedX") && $("#5").hasClass("activatedX") && $("#6").hasClass("activatedX")) {
+				alert("X player won!")
+				winner=true;
+			}
+			else if($("#1").hasClass("activatedX") && $("#5").hasClass("activatedX") && $("#9").hasClass("activatedX")) {
+				alert("X player won!")
+				winner=true;
+			}
+			else if($("#3").hasClass("activatedX") && $("#5").hasClass("activatedX") && $("#7").hasClass("activatedX")) {
+				alert("X player won!")
+				winner=true;
+			}
+
+			//For Oks player
+			if($("#1").hasClass("activatedOks") && $("#2").hasClass("activatedOks") && $("#3").hasClass("activatedOks")) {
+				alert("O player won!")
+				winner=true;
+			}
+			else if($("#1").hasClass("activatedOks") && $("#4").hasClass("activatedOks") && $("#7").hasClass("activatedOks")) {
+				alert("O player won!")
+				winner=true;
+			}
+			else if($("#7").hasClass("activatedOks") && $("#8").hasClass("activatedOks") && $("#9").hasClass("activatedOks")) {
+				alert("O player won!")
+				winner=true;
+			}
+			else if($("#3").hasClass("activatedOks") && $("#6").hasClass("activatedOks") && $("#9").hasClass("activatedOks")) {
+				alert("O player won!")
+				winner=true;
+			}
+			else if($("#2").hasClass("activatedOks") && $("#5").hasClass("activatedOks") && $("#8").hasClass("activatedOks")) {
+				alert("O player won!")
+				winner=true;
+			}
+			else if($("#4").hasClass("activatedOks") && $("#5").hasClass("activatedOks") && $("#6").hasClass("activatedOks")) {
+				alert("O player won!")
+				winner=true;
+			}
+			else if($("#1").hasClass("activatedOks") && $("#5").hasClass("activatedOks") && $("#9").hasClass("activatedOks")) {
+				alert("O player won!")
+				winner=true;
+			}
+			else if($("#3").hasClass("activatedOks") && $("#5").hasClass("activatedOks") && $("#7").hasClass("activatedOks")) {
+				alert("O player won!")
+				winner=true;
+			}
+
+			if(winner == false && $(".activated").length==9){
+				alert("It's a tie!");
+				winner=true;
+			}	
+		}
+			})	
+
+
+
+		$("#resetButton").click(function(){
+			$(".one-third").find("img").attr("src","http://www.clker.com/cliparts/8/0/j/f/r/K/plus-hi.png");
+			$(".one-third").removeClass("activated");
+			$(".one-third").removeClass("activatedX");
+			$(".one-third").removeClass("activatedOks");
+			oks=true;
+			winner=false;
+		})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+* {
+  margin:0;
+  padding: 0;
+}
+body, html {
+  width: 100%;
+  height: 100%;
+}
+.index__jumbotron {
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/index-background.jpg");
+  background-repeat: no-repeat;
+  background-position: 30% 30%;
+  background-size: cover;
+  color:white;
+  min-height: 800px;
+}
+
+.navbar {
+  background: rgba(0,0,0,0.8);
+}
+.navbar .nav-link {
+  color: #8e8e8e;
+  font-size: 21px;
+  margin-right: 20px;
+}
+.navbar .active-link a {
+  color: white;
+}
+.navbar .navbar-toggler{
+  color: white;
+} 
+.navbar .nav-link:hover {
+  color: white;
+}
+.navbar-toggler-icon i {
+  margin-top: -2px;
+  font-size: 35px;
+}
+.index__information {
+  margin-top:250px;
+  padding-left: 50px;
+  padding-bottom: 50px;
+}
+.index__information h1 {
+  font-size: 300%;
+}
+.index__information h6 {
+  font-size: 175%;
+}
+.index__information__lastName {
+  color:#FFD614;
+}
+.index__information__links {
+  font-size: 35px;
+}
+.index__information__links a {
+  color:white;
+  margin-right: 10px;
+}
+.index__information__links a:hover {
+  color:#FFD614;
+}
+
+@media only screen and (max-width: 430px) {
+  .index__information {
+    margin-top: 150px;
+    margin-left: 0;
+  }
+  .index__information h1 {
+    font-size: 250%;
+  }
+  .index__information h6 {
+    font-size: 125%;
+  }
+
+}
+
+

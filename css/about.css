@@ -1,0 +1,146 @@
+.about__container {
+  background-image: url("../img/projects-background2.jpg");
+  background-size: cover;
+  padding-bottom: 50px;
+}
+.about__container .navbar .nav-link {
+  font-size: 26px;
+  margin-right: 19px;
+  padding: 12px 13px 13px 14px;
+}
+.about__information {
+  margin-top: 75px;
+  margin-bottom:50px;
+  color:white;
+}
+.about__information__yellow {
+  color:#FFD614;
+}
+.about__information__headline h1 {
+  font-size: 300%;
+  margin-bottom: 30px;
+}
+.about__information__headline h6 {
+  font-size: 150%;
+}
+.about__profile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  border:4px solid #FFD614;
+}
+.about {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.about__bio {
+  flex: 1;
+  margin-left: 50px;
+  margin-top: 10px;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  min-width: 200px;
+}
+.about__bio p {
+  text-align: justify;
+  font-size: 18px;
+}
+.about__profile {
+  margin-left: 30px;
+  margin-top: 15px;
+  text-align: center;
+  min-width: 200px;
+  flex:0;
+}
+
+.horizontal-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.horizontal-card__image {
+  min-width: 300px;
+  text-align: center;
+  width: 300px;
+  margin-top: 10px;
+}
+.horizontal-card__image img {
+  width: 300px;
+  height: 200px;
+  background: white;
+}
+.horizontal-card__text {
+  flex: 1;
+  color: white;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 5px;
+  padding: 20px;
+  margin-left: 20px;
+  text-align: justify;
+  min-width: 200px;
+  margin-top: 20px;
+  
+}
+.about__bio h5, .horizontal-card__text h5 {
+  font-size: 30px;
+}
+.horizontal-card__text h6 {
+  font-size: 26px;
+}
+.about__bio p,.horizontal-card__text p {
+  font-size: 20px;
+}
+
+.about__programming {
+  color: white;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.card {
+  background:none;
+  color:white;
+  text-align: center;
+  border: none;
+  min-width: 170px;
+}
+.card img {
+  width:120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+
+
+@media only screen and (max-width: 430px) {
+  .about__bio {
+    margin-left: 10px;
+  }
+  .about__profile {
+    margin-left: 10px;
+  }
+  .horizontal-card__image img {
+    width: 200px;
+    height: 150px;
+    border: 3px solid green;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .horizontal-card__image {
+    width: 200px;
+    flex: 1;
+  }
+  .about__profile {
+    flex:1;
+    width: 300px;
+  }
+  .about__bio {
+    min-width: 300px;
+  }
+}
+
