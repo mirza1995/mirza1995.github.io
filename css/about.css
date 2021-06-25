@@ -8,6 +8,10 @@
   margin-bottom:50px;
   color:white;
 }
+.about__information__list {
+  margin-left: 15px;
+}
+
 .about__information__yellow {
   color:#FFD614;
 }
